@@ -71,6 +71,14 @@ li { margin-bottom: 6px; }
 .card > * { position: relative; z-index: 1; }
 a.card:hover { transform: translate(1px, 1px); filter: drop-shadow(1px 1px 0 var(--shadow)); }
 
+.card + .card { margin-top: 16px; }
+.card.soon .name { color: var(--muted); }
+.tag {
+  display: inline-block; vertical-align: middle; margin-left: 8px; padding: 0 8px;
+  font-family: "Silkscreen", monospace; font-weight: 400; font-size: 11px; line-height: 20px;
+  text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted);
+  border: 2px solid var(--muted);
+}
 .app { display: flex; gap: 18px; align-items: center; }
 .app svg { flex: none; }
 .app .name { font-family: "Silkscreen", monospace; font-weight: 700; font-size: 20px; margin: 0 0 2px; }
@@ -113,3 +121,5 @@ footer.site a { color: var(--muted); }
   .hero h1.px { font-size: 26px; }
   main { padding-top: 32px; }
 }
+
+a[href^="mailto:"] { white-space: nowrap; }
