@@ -123,3 +123,4 @@ footer.site a { color: var(--muted); }
 }
 
 a[href^="mailto:"] { white-space: nowrap; }
+
