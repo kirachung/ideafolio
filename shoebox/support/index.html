@@ -7,6 +7,24 @@
 <meta name="description" content="Help with Shoebox: setting up the Save to Shoebox shortcut, what to do if nothing arrives, and keeping screenshots in Photos.">
 <link rel="stylesheet" href="/style.css">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+/* Two screenshot settings, drawn small: capture, then how it's saved to Photos. */
+.shots { display: flex; gap: 24px; margin: 20px 0 8px; }
+.shots figure { flex: 1; margin: 0; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+.shots figcaption b { display: block; }
+.shots figcaption span { color: var(--muted); font-size: 15px; }
+.phone { width: 66px; height: 114px; border: 3px solid var(--ink); border-radius: 12px; position: relative; overflow: hidden; }
+.shot { position: absolute; background: #7FFF5B; border-radius: 4px; animation: 3.4s ease-in-out infinite; }
+.shot.small { left: 6px; top: 68px; width: 18px; height: 30px; animation-name: shot-small; }
+.shot.full { left: 6px; top: 22px; width: 48px; height: 78px; animation-name: shot-full; }
+.phone .check { position: absolute; right: 7px; top: 1px; font-size: 15px; font-weight: 700; line-height: 20px; animation: shot-check 3.4s ease-in-out infinite; }
+.phone .tap { position: absolute; right: 1px; top: -1px; width: 24px; height: 24px; border: 2px solid var(--ink); border-radius: 50%; opacity: 0; animation: shot-tap 3.4s ease-out infinite; }
+@keyframes shot-small { 0% { left: 3px; top: 3px; width: 54px; height: 102px; opacity: 0; } 5%, 14% { left: 3px; top: 3px; width: 54px; height: 102px; opacity: 1; } 34%, 62% { left: 6px; top: 68px; width: 18px; height: 30px; opacity: 1; } 72% { left: -24px; top: 68px; width: 18px; height: 30px; opacity: 1; } 73%, 100% { left: -24px; top: 68px; width: 18px; height: 30px; opacity: 0; } }
+@keyframes shot-full { 0% { left: 3px; top: 3px; width: 54px; height: 102px; opacity: 0; } 5%, 14% { left: 3px; top: 3px; width: 54px; height: 102px; opacity: 1; } 34%, 62% { left: 6px; top: 22px; width: 48px; height: 78px; opacity: 1; } 72%, 100% { left: 6px; top: 22px; width: 48px; height: 78px; opacity: 0; } }
+@keyframes shot-check { 0%, 32% { opacity: 0; } 38%, 62% { opacity: 1; } 72%, 100% { opacity: 0; } }
+@keyframes shot-tap { 0%, 48% { opacity: 0; transform: scale(.5); } 52% { opacity: 1; transform: scale(.7); } 62%, 100% { opacity: 0; transform: scale(1.25); } }
+@media (prefers-reduced-motion: reduce) { .shot, .phone .check, .phone .tap { animation: none; } }
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -29,11 +47,26 @@
   <li>During setup, tap the <b>Save to Shoebox</b> tile. Later, you'll find it in Shoebox → Settings → <b>Set Up Shortcut</b>.</li>
   <li>In the sheet that opens in Shortcuts, turn on <b>Automation</b>, then tap <b>Add Shortcut</b>.</li>
   <li>If <b>Add Shortcut</b> doesn't respond, tap <b>Skip Setup</b> instead. It still adds the shortcut. This is a known issue in iOS 27.</li>
-  <li>Take a screenshot. Within a few seconds it shows up in Shoebox and leaves Photos.</li>
+  <li>Take a screenshot. Once it's saved to Photos, it shows up in Shoebox within a few seconds and leaves Photos.</li>
 </ol>
+
+<h3 id="saving">Saving a screenshot to Photos</h3>
+<p>Shoebox picks a screenshot up once it's saved to Photos. How it gets saved depends on your iPhone's screenshot setting.</p>
+<div class="shots">
+  <figure>
+    <div class="phone" role="img" aria-label="A screenshot shrinks to a small preview in the corner and is swiped away"><div class="shot small"></div></div>
+    <figcaption><b>Small preview</b><span>Saves on its own, or when you swipe it away.</span></figcaption>
+  </figure>
+  <figure>
+    <div class="phone" role="img" aria-label="A screenshot opens full screen, then the checkmark is tapped"><div class="shot full"></div><div class="check" aria-hidden="true">✓</div><div class="tap"></div></div>
+    <figcaption><b>Full screen</b><span>Tap ✓, then Save to Photos.</span></figcaption>
+  </figure>
+</div>
+<p class="muted">To have screenshots save on their own, turn off <b>Full-Screen Previews</b> in iPhone Settings → General → Screen Capture.</p>
 
 <h2 class="px" id="nothing-arrives">Nothing shows up in Shoebox</h2>
 <ul>
+  <li>If the screenshot opened full screen, tap the checkmark and choose <b>Save to Photos</b>. Shoebox only sees screenshots that are saved to Photos. See <a href="#saving">Saving a screenshot to Photos</a>.</li>
   <li>Open Shortcuts → <b>Automation</b> and check that <b>When a screenshot is saved</b> is turned on. iOS adds shared automations switched off, so this is the most common cause.</li>
   <li>Check that <b>Save to Shoebox</b> is in Shortcuts. If it's missing, add it again from Shoebox → Settings → <b>Set Up Shortcut</b>.</li>
   <li>Check that Shoebox can see your photos: iPhone Settings → Apps → Shoebox → Photos → <b>Full Access</b>.</li>
