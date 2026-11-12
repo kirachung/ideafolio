@@ -7,6 +7,11 @@
 <meta name="description" content="Ideafolio LLC makes small, focused apps for iPhone.">
 <link rel="stylesheet" href="/style.css">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+/* Shoebox mark: black on white, neon on black. */
+.mark { fill: var(--ink); }
+@media (prefers-color-scheme: dark) { .mark { fill: #7FFF5B; } }
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -25,7 +30,7 @@
 <h2 class="px">Apps</h2>
 <a class="card" href="/shoebox/">
   <div class="app">
-    <svg width="48" height="48" viewBox="0 0 24 24" role="img" aria-label="Shoebox" shape-rendering="crispEdges"><path style="fill:var(--ink)" d="M18 4H20V6H22V18H20V20H18V22H6V20H4V18H2V6H4V4H6V2H18V4Z"/><path style="fill:var(--paper)" d="M17 9H11V11H15V13H17V15H15V17H7V15H13V13H9V11H7V9H9V7H17V9Z"/></svg>
+    <svg width="48" height="48" viewBox="0 0 24 24" role="img" aria-label="Shoebox" shape-rendering="crispEdges"><path class="mark" d="M2 4h2v4H2zM4 2h4v2H4zM16 2h4v2h-4zM20 4h2v4h-2zM2 16h2v4H2zM4 20h4v2H4zM16 20h4v2h-4zM20 16h2v4h-2zM17 9H11V11H15V13H17V15H15V17H7V15H13V13H9V11H7V9H9V7H17V9Z"/></svg>
     <div>
       <p class="name">Shoebox</p>
       <p class="what">Photos is for photos. Screenshots live here.</p>

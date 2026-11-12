@@ -55,7 +55,7 @@
 <div class="shots">
   <figure>
     <div class="phone" role="img" aria-label="A screenshot shrinks to a small preview in the corner and is swiped away"><div class="shot small"></div></div>
-    <figcaption><b>Small preview</b><span>Saves on its own, or when you swipe it away.</span></figcaption>
+    <figcaption><b>Small preview</b><span>Saves on its own.</span></figcaption>
   </figure>
   <figure>
     <div class="phone" role="img" aria-label="A screenshot opens full screen, then the checkmark is tapped"><div class="shot full"></div><div class="check" aria-hidden="true">✓</div><div class="tap"></div></div>
@@ -67,6 +67,7 @@
 <h2 class="px" id="nothing-arrives">Nothing shows up in Shoebox</h2>
 <ul>
   <li>If the screenshot opened full screen, tap the checkmark and choose <b>Save to Photos</b>. Shoebox only sees screenshots that are saved to Photos. See <a href="#saving">Saving a screenshot to Photos</a>.</li>
+  <li>If Shoebox's Settings shows <b>Automation Looks Paused</b>, the last few screenshots reached Photos without the automation running. Tap <b>Open Automations</b> there and check the next point.</li>
   <li>Open Shortcuts → <b>Automation</b> and check that <b>When a screenshot is saved</b> is turned on. iOS adds shared automations switched off, so this is the most common cause.</li>
   <li>Check that <b>Save to Shoebox</b> is in Shortcuts. If it's missing, add it again from Shoebox → Settings → <b>Set Up Shortcut</b>.</li>
   <li>Check that Shoebox can see your photos: iPhone Settings → Apps → Shoebox → Photos → <b>Full Access</b>.</li>
@@ -88,8 +89,14 @@
 <h3>How do I get a screenshot back into Photos?</h3>
 <p>Open it in Shoebox and choose <b>Save to Photos</b>.</p>
 
+<h3>Do my screenshots sync between my devices?</h3>
+<p>Yes, through your own iCloud. <b>iCloud Sync</b> is on by default and keeps your library the same on every iPhone signed in to your Apple Account. Turn it off in Shoebox → Settings → <b>iCloud Sync</b>; your screenshots stay on that iPhone either way. See the <a href="/shoebox/privacy/">privacy policy</a> for what is stored.</p>
+
+<h3>I set up Shoebox on a second iPhone. Why aren't its screenshots moving?</h3>
+<p>Your library syncs, but the automation doesn't: Shortcuts keeps automations on each device. On the second iPhone, open Shoebox → Settings → <b>Set Up Shortcut</b> and turn on <b>Automation</b> there too.</p>
+
 <h3>What happens if I delete Shoebox?</h3>
-<p>Deleting the app deletes the screenshots stored in it. Save any you want to keep back to Photos first.</p>
+<p>With iCloud Sync on, your screenshots stay in your iCloud and come back when you install Shoebox again and choose <b>Use iCloud library</b>. With iCloud Sync off, deleting the app deletes the screenshots stored in it, so save any you want to keep back to Photos first.</p>
 
 <h3>What do I need?</h3>
 <p>An iPhone with iOS 27 or later, and Apple's Shortcuts app for automatic capture.</p>

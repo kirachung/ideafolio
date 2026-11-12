@@ -7,6 +7,11 @@
 <meta name="description" content="Shoebox moves every screenshot out of your camera roll the moment you take it, and keeps them searchable on your iPhone.">
 <link rel="stylesheet" href="/style.css">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+/* Shoebox mark: black on white, neon on black. */
+.mark { fill: var(--ink); }
+@media (prefers-color-scheme: dark) { .mark { fill: #7FFF5B; } }
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -20,7 +25,7 @@
 </header>
 <main>
 <section class="hero">
-  <svg width="96" height="96" viewBox="0 0 24 24" role="img" aria-label="Shoebox" shape-rendering="crispEdges"><path style="fill:var(--ink)" d="M18 4H20V6H22V18H20V20H18V22H6V20H4V18H2V6H4V4H6V2H18V4Z"/><path style="fill:var(--paper)" d="M17 9H11V11H15V13H17V15H15V17H7V15H13V13H9V11H7V9H9V7H17V9Z"/></svg>
+  <svg width="96" height="96" viewBox="0 0 24 24" role="img" aria-label="Shoebox" shape-rendering="crispEdges"><path class="mark" d="M2 4h2v4H2zM4 2h4v2H4zM16 2h4v2h-4zM20 4h2v4h-2zM2 16h2v4H2zM4 20h4v2H4zM16 20h4v2h-4zM20 16h2v4h-2zM17 9H11V11H15V13H17V15H15V17H7V15H13V13H9V11H7V9H9V7H17V9Z"/></svg>
   <h1 class="px"><span class="dim">Photos is for photos.</span>Screenshots live here.</h1>
   <p class="lede">Take screenshots exactly as you do now. Shoebox moves them out of your camera roll and keeps them in one searchable place.</p>
   <p class="label">Coming soon to the App Store · iOS 27</p>
@@ -32,8 +37,8 @@
     <p>Each screenshot goes into Shoebox the moment you take it, then leaves Photos. Nothing to tap.</p>
   </div>
   <div class="card">
-    <h3>Stays on your iPhone</h3>
-    <p>No account, no servers, no tracking. Your screenshots never leave your phone.</p>
+    <h3>Stays yours</h3>
+    <p>No account, no tracking, no servers of ours. Your screenshots stay on your iPhone and, with iCloud Sync, in your own iCloud.</p>
   </div>
   <div class="card">
     <h3>Easy to find</h3>
